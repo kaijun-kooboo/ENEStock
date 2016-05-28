@@ -1,0 +1,5 @@
+E:\project\ENEStock.Web\ENEStock.IRepository\bin\Debug\ENEStock.IRepository.dll
+E:\project\ENEStock.Web\ENEStock.IRepository\bin\Debug\ENEStock.IRepository.pdb
+E:\project\ENEStock.Web\ENEStock.IRepository\obj\Debug\ENEStock.IRepository.csprojResolveAssemblyReference.cache
+E:\project\ENEStock.Web\ENEStock.IRepository\obj\Debug\ENEStock.IRepository.dll
+E:\project\ENEStock.Web\ENEStock.IRepository\obj\Debug\ENEStock.IRepository.pdb
