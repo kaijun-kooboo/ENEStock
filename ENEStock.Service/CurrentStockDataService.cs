@@ -26,7 +26,6 @@ namespace ENEStock.Service
                 {
                     dataList = new List<ENEStock.Service.Models.CurrentStockData>();
                 }
-
                 thsZDFSB.AppendFormat("http://q.10jqka.com.cn/interface/stock/fl/zdf/asc/{0}/hsa/quote", i);
                 string jsonStr = ENEStock.Common.WebCatchHelper.CatchWebData(thsZDFSB.ToString());
                 dynamic obj = JsonHelper.DeserializeJsonToObject<object>(jsonStr);
