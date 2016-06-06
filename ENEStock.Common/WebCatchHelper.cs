@@ -46,6 +46,23 @@ namespace ENEStock.Common
             return responseBody;
         }
 
+        public static string GetEastMoneyData()
+        {
+            string url = "http://hqdigi2.eastmoney.com/EM_Quote2010NumericApplication/index.aspx?type=s&sortType=C&sortRule=1&pageSize=500&page=1&jsName=quote_123&style=33&token=44c9d251add88e27b65ed86506f6e5da&_g=0.6442607957869768";
+
+             WebRequest request = HttpWebRequest.Create(url);
+            request.Method = "get";
+            WebResponse response = request.GetResponse();
+            Stream stream = response.GetResponseStream();
+            string responseStr = string.Empty;
+            using (StreamReader ms = new StreamReader(stream))
+            {
+                responseStr = ms.ReadToEnd();
+            }
+
+            return responseStr;
+        }
+
         public static void decoderesult(ref string result, HttpWebResponse response)
         {
             using (GZipStream stream = new GZipStream(response.GetResponseStream(), CompressionMode.Decompress))

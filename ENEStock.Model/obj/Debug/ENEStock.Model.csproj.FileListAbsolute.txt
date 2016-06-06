@@ -2,4 +2,8 @@ E:\project\ENEStock.Web\ENEStock.Model\bin\Debug\ENEStock.Model.dll
 E:\project\ENEStock.Web\ENEStock.Model\bin\Debug\ENEStock.Model.pdb
 E:\project\ENEStock.Web\ENEStock.Model\obj\Debug\ENEStock.Model.dll
 E:\project\ENEStock.Web\ENEStock.Model\obj\Debug\ENEStock.Model.pdb
+E:\project\ENEStock.Web\ENEStock.Model\bin\Debug\ENEStock.Model.dll.config
+E:\project\ENEStock.Web\ENEStock.Model\bin\Debug\EntityFramework.dll
+E:\project\ENEStock.Web\ENEStock.Model\bin\Debug\EntityFramework.xml
+E:\project\ENEStock.Web\ENEStock.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
 E:\project\ENEStock.Web\ENEStock.Model\obj\Debug\ENEStock.Model.csprojResolveAssemblyReference.cache

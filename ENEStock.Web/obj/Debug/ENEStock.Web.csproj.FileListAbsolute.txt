@@ -47,3 +47,9 @@ E:\project\ENEStock.Web\ENEStock.Web\bin\ENEStock.Service.dll
 E:\project\ENEStock.Web\ENEStock.Web\bin\ENEStock.Common.pdb
 E:\project\ENEStock.Web\ENEStock.Web\bin\ENEStock.Model.pdb
 E:\project\ENEStock.Web\ENEStock.Web\bin\ENEStock.Service.pdb
+E:\project\ENEStock.Web\ENEStock.Web\bin\ENEStock.IService.dll
+E:\project\ENEStock.Web\ENEStock.Web\bin\ENEStock.IRepository.dll
+E:\project\ENEStock.Web\ENEStock.Web\bin\ENEStock.IService.pdb
+E:\project\ENEStock.Web\ENEStock.Web\bin\ENEStock.IRepository.pdb
+E:\project\ENEStock.Web\ENEStock.Web\bin\ENEStock.Repository.dll
+E:\project\ENEStock.Web\ENEStock.Web\bin\ENEStock.Repository.pdb

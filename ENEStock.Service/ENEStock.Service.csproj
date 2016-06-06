@@ -39,9 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseService.cs" />
     <Compile Include="CurrentStockDataService.cs" />
     <Compile Include="Models\CurrentStockData.cs" />
     <Compile Include="Models\StockDayData.cs" />
+    <Compile Include="Models\stockprice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -49,9 +51,21 @@
       <Project>{284b5120-7e60-4b46-8200-3af1933cb4e1}</Project>
       <Name>ENEStock.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ENEStock.IRepository\ENEStock.IRepository.csproj">
+      <Project>{1fd66159-a2a7-4865-b67b-6bb273f37aea}</Project>
+      <Name>ENEStock.IRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ENEStock.IService\ENEStock.IService.csproj">
+      <Project>{cd7127bb-f9b3-49e8-86da-0fff6b790c4f}</Project>
+      <Name>ENEStock.IService</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ENEStock.Model\ENEStock.Model.csproj">
       <Project>{7eca34f5-414d-485f-a8fe-90d9a3d88501}</Project>
       <Name>ENEStock.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ENEStock.Repository\ENEStock.Repository.csproj">
+      <Project>{18f9aae7-3f38-4f01-ae88-932367a797a6}</Project>
+      <Name>ENEStock.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

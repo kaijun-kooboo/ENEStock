@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StockModelStoreContainer" CdmEntityContainer="StockEntities">
+    <EntitySetMapping Name="stockdetail">
+      <EntityTypeMapping TypeName="StockModel.stockdetail">
+        <MappingFragment StoreEntitySet="stockdetail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="stockid" ColumnName="stockid" />
+          <ScalarProperty Name="stockname" ColumnName="stockname" />
+          <ScalarProperty Name="stockcode" ColumnName="stockcode" />
+          <ScalarProperty Name="zxj" ColumnName="zxj" />
+          <ScalarProperty Name="zde" ColumnName="zde" />
+          <ScalarProperty Name="zdf" ColumnName="zdf" />
+          <ScalarProperty Name="zs" ColumnName="zs" />
+          <ScalarProperty Name="jk" ColumnName="jk" />
+          <ScalarProperty Name="zgj" ColumnName="zgj" />
+          <ScalarProperty Name="zdj" ColumnName="zdj" />
+          <ScalarProperty Name="cjl" ColumnName="cjl" />
+          <ScalarProperty Name="cje" ColumnName="cje" />
+          <ScalarProperty Name="jlr" ColumnName="jlr" />
+          <ScalarProperty Name="hsl" ColumnName="hsl" />
+          <ScalarProperty Name="rtime" ColumnName="rtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stockprice">
+      <EntityTypeMapping TypeName="StockModel.stockprice">
+        <MappingFragment StoreEntitySet="stockprice">
+          <ScalarProperty Name="istouch5" ColumnName="istouch5" />
+          <ScalarProperty Name="isstop" ColumnName="isstop" />
+          <ScalarProperty Name="isright" ColumnName="isright" />
+          <ScalarProperty Name="enelower" ColumnName="enelower" />
+          <ScalarProperty Name="enemiddle" ColumnName="enemiddle" />
+          <ScalarProperty Name="eneupper" ColumnName="eneupper" />
+          <ScalarProperty Name="ma10" ColumnName="ma10" />
+          <ScalarProperty Name="ma5" ColumnName="ma5" />
+          <ScalarProperty Name="tradetime" ColumnName="tradetime" />
+          <ScalarProperty Name="amplitude" ColumnName="amplitude" />
+          <ScalarProperty Name="changerate" ColumnName="changerate" />
+          <ScalarProperty Name="changeamount" ColumnName="changeamount" />
+          <ScalarProperty Name="tradingvolume" ColumnName="tradingvolume" />
+          <ScalarProperty Name="turnover" ColumnName="turnover" />
+          <ScalarProperty Name="lowestprice" ColumnName="lowestprice" />
+          <ScalarProperty Name="highestprice" ColumnName="highestprice" />
+          <ScalarProperty Name="newprice" ColumnName="newprice" />
+          <ScalarProperty Name="openprice" ColumnName="openprice" />
+          <ScalarProperty Name="lastprice" ColumnName="lastprice" />
+          <ScalarProperty Name="codename" ColumnName="codename" />
+          <ScalarProperty Name="stockcode" ColumnName="stockcode" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
