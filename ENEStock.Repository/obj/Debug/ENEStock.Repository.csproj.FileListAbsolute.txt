@@ -3,3 +3,13 @@ E:\project\ENEStock.Web\ENEStock.Repository\bin\Debug\ENEStock.Repository.pdb
 E:\project\ENEStock.Web\ENEStock.Repository\obj\Debug\ENEStock.Repository.csprojResolveAssemblyReference.cache
 E:\project\ENEStock.Web\ENEStock.Repository\obj\Debug\ENEStock.Repository.dll
 E:\project\ENEStock.Web\ENEStock.Repository\obj\Debug\ENEStock.Repository.pdb
+E:\project\ENEStock.Web\ENEStock.Repository\bin\Debug\ENEStock.Repository.dll.config
+E:\project\ENEStock.Web\ENEStock.Repository\bin\Debug\ENEStock.IRepository.dll
+E:\project\ENEStock.Web\ENEStock.Repository\bin\Debug\ENEStock.Model.dll
+E:\project\ENEStock.Web\ENEStock.Repository\bin\Debug\EntityFramework.dll
+E:\project\ENEStock.Web\ENEStock.Repository\bin\Debug\EntityFramework.SqlServer.dll
+E:\project\ENEStock.Web\ENEStock.Repository\bin\Debug\ENEStock.IRepository.pdb
+E:\project\ENEStock.Web\ENEStock.Repository\bin\Debug\ENEStock.Model.pdb
+E:\project\ENEStock.Web\ENEStock.Repository\bin\Debug\EntityFramework.xml
+E:\project\ENEStock.Web\ENEStock.Repository\bin\Debug\EntityFramework.SqlServer.xml
+E:\project\ENEStock.Web\ENEStock.Repository\bin\Debug\zh-Hans\EntityFramework.resources.dll

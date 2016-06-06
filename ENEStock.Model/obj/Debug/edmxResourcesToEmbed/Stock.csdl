@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StockModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="stockdetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="stockid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="stockname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="stockcode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="zxj" Type="Double" />
+    <Property Name="zde" Type="Double" />
+    <Property Name="zdf" Type="Double" />
+    <Property Name="zs" Type="Double" />
+    <Property Name="jk" Type="Double" />
+    <Property Name="zgj" Type="Double" />
+    <Property Name="zdj" Type="Double" />
+    <Property Name="cjl" Type="Int32" />
+    <Property Name="cje" Type="Double" />
+    <Property Name="jlr" Type="Double" />
+    <Property Name="hsl" Type="Double" />
+    <Property Name="rtime" Type="DateTime" />
+  </EntityType>
+  <EntityContainer Name="StockEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="stockdetail" EntityType="Self.stockdetail" />
+    <EntitySet Name="stockprice" EntityType="StockModel.stockprice" />
+  </EntityContainer>
+  <EntityType Name="stockprice">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="stockcode" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="stockcode" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="codename" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="lastprice" Type="Double" />
+    <Property Name="openprice" Type="Double" />
+    <Property Name="newprice" Type="Double" />
+    <Property Name="highestprice" Type="Double" />
+    <Property Name="lowestprice" Type="Double" />
+    <Property Name="turnover" Type="Int32" />
+    <Property Name="tradingvolume" Type="Int32" />
+    <Property Name="changeamount" Type="Double" />
+    <Property Name="changerate" Type="String" />
+    <Property Name="amplitude" Type="String" />
+    <Property Name="tradetime" Type="DateTime" />
+    <Property Name="ma5" Type="Double" />
+    <Property Name="ma10" Type="Double" />
+    <Property Name="eneupper" Type="Double" Nullable="true" />
+    <Property Name="enemiddle" Type="Double" />
+    <Property Name="enelower" Type="Double" Nullable="true" />
+    <Property Name="isright" Type="Boolean" />
+    <Property Name="isstop" Type="Boolean" />
+    <Property Name="istouch5" Type="Boolean" />
+  </EntityType>
+</Schema>

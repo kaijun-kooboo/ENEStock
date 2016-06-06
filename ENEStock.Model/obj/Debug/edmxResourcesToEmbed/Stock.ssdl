@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StockModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="stockdetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="stockid" Type="varchar" MaxLength="255" />
+    <Property Name="stockname" Type="varchar" MaxLength="255" />
+    <Property Name="stockcode" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="zxj" Type="double" />
+    <Property Name="zde" Type="double" />
+    <Property Name="zdf" Type="double" />
+    <Property Name="zs" Type="double" />
+    <Property Name="jk" Type="double" />
+    <Property Name="zgj" Type="double" />
+    <Property Name="zdj" Type="double" />
+    <Property Name="cjl" Type="int" />
+    <Property Name="cje" Type="double" />
+    <Property Name="jlr" Type="double" />
+    <Property Name="hsl" Type="double" />
+    <Property Name="rtime" Type="datetime" Precision="0" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“def.enestock.stockprice”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="stockprice">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="stockcode" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="stockcode" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="codename" Type="varchar" MaxLength="255" />
+    <Property Name="lastprice" Type="double" />
+    <Property Name="openprice" Type="double" />
+    <Property Name="newprice" Type="double" />
+    <Property Name="highestprice" Type="double" />
+    <Property Name="lowestprice" Type="double" />
+    <Property Name="turnover" Type="int" />
+    <Property Name="tradingvolume" Type="int" />
+    <Property Name="changeamount" Type="double" />
+    <Property Name="changerate" Type="varchar" MaxLength="255" />
+    <Property Name="amplitude" Type="varchar" MaxLength="255" />
+    <Property Name="ma5" Type="double" />
+    <Property Name="ma10" Type="double" />
+    <Property Name="eneupper" Type="double" />
+    <Property Name="enemiddle" Type="double" />
+    <Property Name="enelower" Type="double" />
+    <Property Name="isright" Type="bit" />
+    <Property Name="isstop" Type="bit" />
+    <Property Name="istouch5" Type="bit" />
+    <Property Name="tradetime" Type="datetime" Precision="1" />
+  </EntityType>
+  <EntityContainer Name="StockModelStoreContainer">
+    <EntitySet Name="stockdetail" EntityType="Self.stockdetail" Schema="enestock" store:Type="Tables" />
+    <EntitySet Name="stockprice" EntityType="Self.stockprice" store:Type="Tables" store:Schema="enestock">
+      <DefiningQuery>SELECT
+`stockprice`.`id`, 
+`stockprice`.`stockcode`, 
+`stockprice`.`codename`, 
+`stockprice`.`lastprice`, 
+`stockprice`.`openprice`, 
+`stockprice`.`newprice`, 
+`stockprice`.`highestprice`, 
+`stockprice`.`lowestprice`, 
+`stockprice`.`turnover`, 
+`stockprice`.`tradingvolume`, 
+`stockprice`.`changeamount`, 
+`stockprice`.`changerate`, 
+`stockprice`.`amplitude`, 
+`stockprice`.`ma5`, 
+`stockprice`.`ma10`, 
+`stockprice`.`eneupper`, 
+`stockprice`.`enemiddle`, 
+`stockprice`.`enelower`, 
+`stockprice`.`isright`, 
+`stockprice`.`isstop`, 
+`stockprice`.`istouch5`, 
+`stockprice`.`tradetime`
+FROM `stockprice` AS `stockprice`</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

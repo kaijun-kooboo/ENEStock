@@ -9,3 +9,12 @@ E:\project\ENEStock.Web\ENEStock.Service\obj\Debug\ENEStock.Service.dll
 E:\project\ENEStock.Web\ENEStock.Service\obj\Debug\ENEStock.Service.pdb
 E:\project\ENEStock.Web\ENEStock.Service\bin\Debug\Newtonsoft.Json.dll
 E:\project\ENEStock.Web\ENEStock.Service\bin\Debug\Newtonsoft.Json.xml
+E:\project\ENEStock.Web\ENEStock.Service\bin\Debug\EntityFramework.dll
+E:\project\ENEStock.Web\ENEStock.Service\bin\Debug\EntityFramework.xml
+E:\project\ENEStock.Web\ENEStock.Service\bin\Debug\ENEStock.IRepository.dll
+E:\project\ENEStock.Web\ENEStock.Service\bin\Debug\ENEStock.IService.dll
+E:\project\ENEStock.Web\ENEStock.Service\bin\Debug\ENEStock.IRepository.pdb
+E:\project\ENEStock.Web\ENEStock.Service\bin\Debug\ENEStock.IService.pdb
+E:\project\ENEStock.Web\ENEStock.Service\bin\Debug\ENEStock.Repository.dll
+E:\project\ENEStock.Web\ENEStock.Service\bin\Debug\ENEStock.Repository.pdb
+E:\project\ENEStock.Web\ENEStock.Service\bin\Debug\zh-Hans\EntityFramework.resources.dll

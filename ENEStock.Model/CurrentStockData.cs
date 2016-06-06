@@ -8,7 +8,7 @@ namespace ENEStock.Models
     public class CurrentStockData
     {
         //所属板块
-        public string stockid { set; get; }
+        public Guid stockid { set; get; }
 
         //股票名称
         public string stockname { set; get; }
