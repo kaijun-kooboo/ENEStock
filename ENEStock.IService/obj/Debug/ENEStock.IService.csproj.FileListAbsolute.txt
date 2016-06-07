@@ -2,3 +2,8 @@ E:\project\ENEStock.Web\ENEStock.IService\bin\Debug\ENEStock.IService.dll
 E:\project\ENEStock.Web\ENEStock.IService\bin\Debug\ENEStock.IService.pdb
 E:\project\ENEStock.Web\ENEStock.IService\obj\Debug\ENEStock.IService.dll
 E:\project\ENEStock.Web\ENEStock.IService\obj\Debug\ENEStock.IService.pdb
+D:\project\ENEStock\ENEStock.IService\bin\Debug\ENEStock.IService.dll
+D:\project\ENEStock\ENEStock.IService\bin\Debug\ENEStock.IService.pdb
+D:\project\ENEStock\ENEStock.IService\obj\Debug\ENEStock.IService.csprojResolveAssemblyReference.cache
+D:\project\ENEStock\ENEStock.IService\obj\Debug\ENEStock.IService.dll
+D:\project\ENEStock\ENEStock.IService\obj\Debug\ENEStock.IService.pdb

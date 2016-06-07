@@ -7,3 +7,12 @@ E:\project\ENEStock.Web\ENEStock.Model\bin\Debug\EntityFramework.dll
 E:\project\ENEStock.Web\ENEStock.Model\bin\Debug\EntityFramework.xml
 E:\project\ENEStock.Web\ENEStock.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
 E:\project\ENEStock.Web\ENEStock.Model\obj\Debug\ENEStock.Model.csprojResolveAssemblyReference.cache
+D:\project\ENEStock\ENEStock.Model\bin\Debug\ENEStock.Model.dll.config
+D:\project\ENEStock\ENEStock.Model\bin\Debug\ENEStock.Model.dll
+D:\project\ENEStock\ENEStock.Model\bin\Debug\ENEStock.Model.pdb
+D:\project\ENEStock\ENEStock.Model\bin\Debug\EntityFramework.dll
+D:\project\ENEStock\ENEStock.Model\bin\Debug\EntityFramework.xml
+D:\project\ENEStock\ENEStock.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\project\ENEStock\ENEStock.Model\obj\Debug\ENEStock.Model.csprojResolveAssemblyReference.cache
+D:\project\ENEStock\ENEStock.Model\obj\Debug\ENEStock.Model.dll
+D:\project\ENEStock\ENEStock.Model\obj\Debug\ENEStock.Model.pdb

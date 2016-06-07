@@ -40,10 +40,16 @@ namespace ENEStock.Common
             request.Headers["Accept-Encoding"] = "gzip";//数据压缩传输
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             string encoding = response.ContentEncoding;
-            string responseBody = string.Empty;
-            decoderesult(ref responseBody, response);
+            // string responseBody = string.Empty;
+            Stream stream = response.GetResponseStream();
+            string responseStr = string.Empty;
+            using (StreamReader ms = new StreamReader(stream))
+            {
+                responseStr = ms.ReadToEnd();
+            }
+            // decoderesult(ref responseBody, response);
             response.Close();
-            return responseBody;
+            return responseStr;
         }
 
         public static string GetEastMoneyData()
