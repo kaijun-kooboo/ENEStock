@@ -15,7 +15,31 @@
     <script src="~/Scripts/easyui-lang-zh_CN.js"></script>
 </head>
 <body class="easyui-layout">
-    <div data-options="region:'west',title:'West',split:true" style="width:150px;"></div>
-    <div data-options="region:'center',title:'center title'" style="padding:5px;background:#eee;"></div>
-</body>  
+    <div data-options="region:'west',title:'导航',split:true" style="width:150px;">
+        <ul id="tt" class="easyui-tree">
+
+
+            <li>
+                <span><a href="#">File 11</a></span>
+            </li>
+            <li>
+                <span>File 12</span>
+            </li>
+            <li>
+                <span>File 13</span>
+            </li>
+            <li>
+                <span>File 2</span>
+            </li>
+            <li>
+                <span>File 3</span>
+            </li>
+
+
+        </ul>
+    </div>
+    <div data-options="region:'center',title:'列表'" style="padding:5px;background:#eee;">
+        <div id="tabBox" class="easyui-tabs" style="width:500px;height:250px;"></div>      
+    </div>
+</body>
 </html>

@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common.cs" />
+    <Compile Include="Format\AjaxMsg.cs" />
+    <Compile Include="Format\PagedData.cs" />
+    <Compile Include="Format\TreeNode.cs" />
     <Compile Include="JsonHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebCatchHelper.cs" />

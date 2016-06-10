@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SevenOA.MODEL.FormatMODEL
+namespace ENEStock.Common.Format
 {
     /// <summary>
     /// Ajax 统一消息格式（用来生成 统一的 json 字符串）
