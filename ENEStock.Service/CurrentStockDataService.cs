@@ -98,7 +98,7 @@ namespace ENEStock.Service
                 stockpriceList.Add(model);
             });
 
-            Init(new DateTime(2016, 6, 2), new DateTime(2016, 6, 7), stockpriceList);
+            Init(new DateTime(2016, 6, 1), new DateTime(2016, 6, 6), stockpriceList);
 
             //init ENE
             stockpriceList.ForEach(m =>
@@ -108,7 +108,7 @@ namespace ENEStock.Service
                     m.eneupper = Convert.ToDouble(Math.Round((decimal)(1.11 * m.ma5), 2));
                     m.enelower = Convert.ToDouble(Math.Round((decimal)( 0.91 * m.ma5), 2));
                     m.enemiddle = (m.eneupper + m.enelower) / 2;
-
+                    m.enemiddle = Convert.ToDouble(Math.Round((decimal)(m.enemiddle), 2));
                     if (m.enelower >= m.lowestprice)
                     {
                         m.istouch5 = true;

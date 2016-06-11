@@ -36,12 +36,12 @@ namespace ENEStock.Web.Controllers
             return View();
         }
 
-        public ActionResult GetTestData()
+        public string GetStockData()
         {
             List<Model.stockprice> stockpriceList = service.CatchEastMoneyRankData().Where(m=> m.istouch5 == true && m.isstop == false && m.isright == false).ToList();
 
 
-            return Content(ENEStock.Common.JsonHelper.SerializeObject(stockpriceList));
+            return ENEStock.Common.JsonHelper.SerializeObject(stockpriceList);
         }
 
         public ActionResult GetEntity()
@@ -57,6 +57,7 @@ namespace ENEStock.Web.Controllers
             node.Checked = true;
             node.text = "实时ENE";
             node.id = 1;
+            node.attributes = new { href = "/data/Index" };
             return "[" + ENEStock.Common.JsonHelper.SerializeObject(node)  + "]";
         }
     }

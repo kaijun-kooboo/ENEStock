@@ -13,37 +13,65 @@
     <script src="~/Scripts/jquery.min.js"></script>
     <script src="~/Scripts/jquery.easyui.min.js"></script>
     <script src="~/Scripts/easyui-lang-zh_CN.js"></script>
-    
-    <script>
+    <script type="text/javascript">
         $(function () {
-            $('#tt').tree({
-                url: "/data/TreeMenu",
-                animate: true,
-                lines: true,
-                onClick: ondeClick
+            $('#tbGrid').datagrid({
+                url: '/data/GetStockData',
+                columns: [[
+                    { field: 'stockcode', title: '股票代码' },
+                    { field: 'codename', title: '股票名称' },
+                    {
+                        field: 'newprice', title: '最新价', align: 'right', formatter: function (value) {
+                            return "<span style='color:red'>" + value + "</span>";
+                        }
+                    },
+                    { field: 'lastprice', title: '收盘价', align: 'right' },
+                    { field: 'openprice', title: '开盘价', align: 'right' },
+                    { field: 'highestprice', title: '最高价',  align: 'right' },
+                    {
+                        field: 'lowestprice', title: '最低价', align: 'right', formatter: function (value) {
+                            return "<span style='color:red'>" + value + "</span>";
+                        }
+                    },
+                    //{ field: 'turnover', title: '最新价', width: 100, align: 'right' },
+                    //{ field: 'tradingvolume', title: '最新价', width: 100, align: 'right' },
+                    { field: 'changeamount', title: '涨跌额',  align: 'right' },
+                    {
+                        field: 'changerate', title: '涨跌幅', align: 'right', formatter: function (value) {
+                            return "<span style='color:red'>" + value + "</span>";
+                        }
+                    },
+                    { field: 'amplitude', title: '振幅',  align: 'right' },
+                    { field: 'eneupper', title: '上轨',  align: 'right' },
+                    { field: 'enemiddle', title: '中轨', align: 'right' },
+                    {
+                        field: 'enelower', title: '下轨', align: 'right',
+                        formatter: function (value) {
+                            return "<span style='color:red'>" + value + "</span>";
+                        }
+                    },
+                    { field: 'istouch5', title: '是否碰触', align: 'right' },
+                    {
+                        field: 'tradetime', title: '交易时间', align: 'right',
+                        formatter: function (value) {
+                            return value.replace(/T/, " ");
+                        }
+                    }
+                ]],
+                singleSelect: true
+            });
+
+            $('#fromdate').datebox({
+            });
+
+            $('#enddate').datebox({
             });
         });
-
-        function ondeClick(nodeData) {
-            $("#tabBox").tabs("add", {
-                title: nodeData.text,
-                content: createIframe(),
-                closable: true
-            });
-        }
-
-        function createIframe() {
-            return "<iframe src= 'http://www.baidu.com' style='width:100%;height:100%;' ></iframe>";
-        }
     </script>
 </head>
 <body class="easyui-layout">
-    <div data-options="region:'west',title:'导航',split:true" style="width:150px;">
-        <ul id="tt" class="easyui-tree">
-        </ul>
-    </div>
-    <div data-options="region:'center',title:'列表'" style="padding:5px;background:#eee;">
-        <div id="tabBox" class="easyui-tabs" style="width:100%;height:100%;"></div>
-    </div>
+    <label for="fromdate">开始日期</label> <input id="fromdate" type="text"></input>
+    <label for="fromdate" >结束日期</label> <input id="enddate" type="text"></input>     
+    <table id="tbGrid"></table> 
 </body>
 </html>

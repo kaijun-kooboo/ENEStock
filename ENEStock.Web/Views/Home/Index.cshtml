@@ -1,0 +1,79 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/themes/icon.css" rel="stylesheet" />
+    <link href="~/Content/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/easyui-lang-zh_CN.js"></script>
+
+    <script>
+        $(function () {
+            $('#tt').tree({
+                url: "/home/TreeMenu",
+                animate: true,
+                lines: true,
+                onClick: ondeClick
+            });
+        });
+
+        function ondeClick(nodeData) {
+            var $tabBox = $("#tabBox");
+            //1.1如果 已经有 与选中节点 同名选项卡，则 重新选中 同名选项卡
+            if ($tabBox.tabs("exists", nodeData.text)) {
+                //判断当前选中的选项卡 是否 和 与选中节点 文字一样
+                //获取选中的 选项卡对象
+                var curTab = $tabBox.tabs('getSelected');
+                //获取当前选中的选项卡 的标题：调用当前选项卡 的 options方法 获取 选项卡的 属性集合对象，然后获取 title属性值
+                var curTabTitle = $(curTab).panel("options").title;
+                //a.如果一样，刷新当前选中的选项卡
+                if (curTabTitle == nodeData.text) {
+                    $.messager.confirm('是否刷新', '您确定要刷新当前【' + curTabTitle + '】面板吗？', function (isOk) {
+                        if (isOk) {
+                            $tabBox.tabs('update', {
+                                tab: curTab,//刷新当前选中面板
+                                options: {
+                                    content: createIframe(nodeData.attributes.href)//重新设置 选中选项卡 对应的 面板 内容
+                                }
+                            });
+                        }
+                    });
+
+                }
+                    //b.如果不一样，选中 与选中节点 文字一样 的选项卡
+                else {
+                    $tabBox.tabs("select", nodeData.text);
+                }
+
+            }
+                //1.2如果 没有 与选中节点 同名选项卡，则 创建 新的
+            else {
+                $tabBox.tabs("add", {
+                    title: nodeData.text,
+                    content: createIframe(nodeData.attributes.href),
+                    closable: true
+                });
+            }
+        }
+
+        function createIframe(href) {
+            return "<iframe src='"+href+"' style='width:98%;height:98%;' ></iframe>";
+        }
+    </script>
+</head>
+<body class="easyui-layout">
+    <div data-options="region:'west',title:'导航',split:true" style="width:150px;">
+        <ul id="tt" class="easyui-tree"></ul>
+    </div>
+    <div data-options="region:'center',title:'列表'" style="padding:5px;background:#eee;">
+        <div id="tabBox" class="easyui-tabs" style="width:100%;height:100%;"></div>
+    </div>
+</body>
+</html>
