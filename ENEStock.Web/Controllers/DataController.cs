@@ -51,6 +51,14 @@ namespace ENEStock.Web.Controllers
             return Content("5");
         }
 
+        public string TreeMenu()
+        {
+            var node = new ENEStock.Common.Format.TreeNode();
+            node.Checked = true;
+            node.text = "实时ENE";
+            node.id = 1;
+            return "[" + ENEStock.Common.JsonHelper.SerializeObject(node)  + "]";
+        }
     }
 
 }
