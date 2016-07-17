@@ -60,7 +60,7 @@ namespace ENEStock.Service
         /// 抓取东方财富数据
         /// </summary>
         /// <returns></returns>
-        public List<Model.stockprice> CatchEastMoneyRankData()
+        public List<Model.stockprice> CatchEastMoneyRankData(string startdate, string enddate)
         {
             List<Model.stockprice> stockpriceList = null;
             string orginData = WebCatchHelper.GetEastMoneyData();
@@ -98,7 +98,8 @@ namespace ENEStock.Service
                 stockpriceList.Add(model);
             });
 
-            Init(new DateTime(2016, 6, 1), new DateTime(2016, 6, 6), stockpriceList);
+
+            Init(Convert.ToDateTime(startdate), Convert.ToDateTime(enddate), stockpriceList);
 
             //init ENE
             stockpriceList.ForEach(m =>

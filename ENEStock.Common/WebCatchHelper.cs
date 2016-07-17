@@ -38,18 +38,31 @@ namespace ENEStock.Common
             string token = "ebd8925c8029dd5512f0d18cbd32ff308205b8b32cea98e9c69fd33f675e7d7d";//此处更换token
             request.Headers["Authorization"] = "Bearer " + token;
             request.Headers["Accept-Encoding"] = "gzip";//数据压缩传输
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            string encoding = response.ContentEncoding;
-            // string responseBody = string.Empty;
-            Stream stream = response.GetResponseStream();
-            string responseStr = string.Empty;
-            using (StreamReader ms = new StreamReader(stream))
+
+            try
             {
-                responseStr = ms.ReadToEnd();
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                string encoding = response.ContentEncoding;
+                Stream stream = response.GetResponseStream();
+                string responseStr = string.Empty;
+                using (StreamReader ms = new StreamReader(stream, Encoding.UTF8))
+                {
+                    responseStr = ms.ReadToEnd();
+                }
+                // decoderesult(ref responseBody, response);
+                response.Close();
+                return responseStr;
             }
-            // decoderesult(ref responseBody, response);
-            response.Close();
-            return responseStr;
+            catch
+            {
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                string encoding = response.ContentEncoding;
+                string responseBody = string.Empty;
+                decoderesult(ref responseBody, response);
+                Console.Write(responseBody);
+                response.Close();
+                return responseBody;
+            }
         }
 
         public static string GetEastMoneyData()

@@ -36,9 +36,14 @@ namespace ENEStock.Web.Controllers
             return View();
         }
 
-        public string GetStockData()
+        public string GetStockData(string startdate, string enddate)
         {
-            List<Model.stockprice> stockpriceList = service.CatchEastMoneyRankData().Where(m=> m.istouch5 == true && m.isstop == false && m.isright == false).ToList();
+            if (string.IsNullOrEmpty(startdate) && string.IsNullOrEmpty(enddate))
+            {
+                startdate = DateTime.Now.AddDays(-4).ToString();
+                enddate = DateTime.Now.AddDays(-1).ToString();
+            }
+            List<Model.stockprice> stockpriceList = service.CatchEastMoneyRankData(startdate, enddate).Where(m => m.istouch5 == true && m.isstop == false && m.isright == false).ToList();
 
 
             return ENEStock.Common.JsonHelper.SerializeObject(stockpriceList);
