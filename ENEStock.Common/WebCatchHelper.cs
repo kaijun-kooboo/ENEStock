@@ -41,6 +41,7 @@ namespace ENEStock.Common
 
             try
             {
+                request.AutomaticDecompression = DecompressionMethods.GZip;
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 string encoding = response.ContentEncoding;
                 Stream stream = response.GetResponseStream();
@@ -55,6 +56,7 @@ namespace ENEStock.Common
             }
             catch
             {
+                request.AutomaticDecompression = DecompressionMethods.GZip;
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 string encoding = response.ContentEncoding;
                 string responseBody = string.Empty;

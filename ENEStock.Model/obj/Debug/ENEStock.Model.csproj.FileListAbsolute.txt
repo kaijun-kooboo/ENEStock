@@ -15,3 +15,4 @@ D:\project\ENEStock\ENEStock.Model\bin\Debug\zh-Hans\EntityFramework.resources.d
 D:\project\ENEStock\ENEStock.Model\obj\Debug\ENEStock.Model.csprojResolveAssemblyReference.cache
 D:\project\ENEStock\ENEStock.Model\obj\Debug\ENEStock.Model.dll
 D:\project\ENEStock\ENEStock.Model\obj\Debug\ENEStock.Model.pdb
+E:\project\ENEStock.Web\ENEStock.Model\obj\Debug\ENEStock.Model.csprojResolveAssemblyReference.cache
