@@ -30,6 +30,17 @@
                         }
                     },
                     {
+                        field: 'compare', title: '比较', align: 'center',
+                        formatter: function (value, row) {
+                            if (row.newprice > row.enelower) {
+                                return ">";
+                            } else if (row.newprice < row.enelower) {
+                                return "<span style='color:red;font-weight:bold'><</span>";
+                            }
+                            
+                        }
+                    },
+                    {
                         field: 'enelower', title: '下轨', align: 'right',
                         formatter: function (value) {
                             return "<span style='color:red'>" + value + "</span>";
@@ -74,15 +85,17 @@
                         }
                     },
                     {
-                        field: '', title: '   ',
+                        field: 'operation', title: '操   作',
                         formatter: function (value, row) {
-                            console.info(row);
                             return '<a href="javascript:void(0)" onclick="openWindow(' + '\'' + row.stockcode + '\'' + ')">详细</a>';
                         }
                     }
                 ]],
-                singleSelect: true
+                singleSelect: true,
+                rownumbers: true
             });
+
+            $('.datagrid-cell').css('font-size', '20px');
 
             $('#fromdate').datebox({
             });
@@ -98,8 +111,8 @@
         function openWindow(stockcode) {
             $('#win').window({
                 title: "分时/K线",
-                width: 600,
-                height: 400,
+                width: 700,
+                height: 500,
                 modal: true,
                 content: "<div id='tab' class='easyui-tabs' style='width:100%;height:100%;'></div>"
             }).window('open');
@@ -152,7 +165,7 @@
             } else {
                 clearInterval(intervalProcess);
             }
-            
+
         }
 
     </script>
