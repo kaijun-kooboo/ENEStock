@@ -79,7 +79,7 @@
                         }
                     },
                     {
-                        field: 'tradetime', title: '交易时间', align: 'right',
+                        field: 'tradetime', title: '交易时间', align: 'right', 
                         formatter: function (value) {
                             return value.replace(/T/, " ");
                         }
@@ -96,15 +96,8 @@
             });
 
             $('.datagrid-cell').css('font-size', '20px');
-
-            $('#fromdate').datebox({
-            });
-
-            $('#enddate').datebox({
-            });
-
+            initDate("5");
             $('#win').window('close');
-
         });
 
 
@@ -168,12 +161,25 @@
 
         }
 
+        function initDate(interval) {
+            $.get('/data/GetTradeDate?interval='+ interval,
+                 null,
+                function (data) {
+                    console.info(data[0]);
+                    $("#fromdate").datebox('setValue', data[0]); 
+                    $("#enddate").datebox('setValue', data[1]);
+                },
+                "json");
+        }
+
     </script>
 
 }
 
-<label for="fromdate">开始日期</label> <input id="fromdate" type="text"></input>
-<label for="fromdate">结束日期</label> <input id="enddate" type="text"></input>
+<label for="fromdate">开始日期</label> <input id="fromdate" class="easyui-datebox" type="text"></input>
+<label for="fromdate">结束日期</label> <input id="enddate" class="easyui-datebox" type="text"></input>
+<a id="refresh" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="initDate(5)">5日ENE</a>
+<br />
 <a id="refresh" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="reload()">刷新</a>
 <input id="sb" class="easyui-switchbutton">
 <a id="btn1" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="openWindow('sh000001')">上证</a>

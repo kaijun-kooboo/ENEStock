@@ -35,6 +35,7 @@
       <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,6 +47,7 @@
     <Compile Include="Common.cs" />
     <Compile Include="Format\AjaxMsg.cs" />
     <Compile Include="Format\PagedData.cs" />
+    <Compile Include="Format\TLJsonObj.cs" />
     <Compile Include="Format\TreeNode.cs" />
     <Compile Include="JsonHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

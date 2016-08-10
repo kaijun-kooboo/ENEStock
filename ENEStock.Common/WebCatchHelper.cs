@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -11,6 +12,9 @@ namespace ENEStock.Common
 {
     public class WebCatchHelper
     {
+        public static readonly string TLTradeDateAPI = "/api/master/getTradeCal.json?field=&exchangeCD=XSHG&beginDate=20160101&endDate=20161231";
+        public static readonly string TLBaseHost = ConfigurationManager.AppSettings["tlbasehost"].ToString();
+
         public static string CatchWebData(string url)
         {
             WebRequest request = HttpWebRequest.Create(url);
@@ -82,6 +86,42 @@ namespace ENEStock.Common
             }
 
             return responseStr;
+        }
+
+        public static string GetTradeDate()
+        {
+            string url = TLBaseHost + TLTradeDateAPI;
+             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            string token = "ebd8925c8029dd5512f0d18cbd32ff308205b8b32cea98e9c69fd33f675e7d7d";//此处更换token
+            request.Headers["Authorization"] = "Bearer " + token;
+            request.Headers["Accept-Encoding"] = "gzip";//数据压缩传输
+
+            try
+            {
+                request.AutomaticDecompression = DecompressionMethods.GZip;
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                string encoding = response.ContentEncoding;
+                Stream stream = response.GetResponseStream();
+                string responseStr = string.Empty;
+                using (StreamReader ms = new StreamReader(stream, Encoding.UTF8))
+                {
+                    responseStr = ms.ReadToEnd();
+                }
+                // decoderesult(ref responseBody, response);
+                response.Close();
+                return responseStr;
+            }
+            catch
+            {
+                request.AutomaticDecompression = DecompressionMethods.GZip;
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                string encoding = response.ContentEncoding;
+                string responseBody = string.Empty;
+                decoderesult(ref responseBody, response);
+                Console.Write(responseBody);
+                response.Close();
+                return responseBody;
+            }
         }
 
         public static void decoderesult(ref string result, HttpWebResponse response)

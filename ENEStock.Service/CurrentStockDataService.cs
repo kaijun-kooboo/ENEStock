@@ -1,4 +1,5 @@
 ﻿using ENEStock.Common;
+using ENEStock.Common.Format;
 using ENEStock.Models;
 using ENEStock.Service.Models;
 using System;
@@ -175,6 +176,12 @@ namespace ENEStock.Service
             return stockpriceList;
         }
 
+        public List<TLTradeDateDto> GetTLTradeDateList()
+        {
+            string jsonTradeDate = WebCatchHelper.GetTradeDate();
+            TLJsonObj jsonObj = JsonHelper.DeserializeJsonToObject<TLJsonObj>(jsonTradeDate);
+            return JsonHelper.DeserializeJsonToList<TLTradeDateDto>(jsonObj.data.ToString());
+        }
 
         public Model.stockdetail GetEntiy()
         {

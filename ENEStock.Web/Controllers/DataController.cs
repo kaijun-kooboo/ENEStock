@@ -4,6 +4,7 @@ using System.Web.Mvc;
 using System.Net;
 using ENEStock.Web.Common;
 using System.Collections.Generic;
+using ENEStock.Common.Format;
 
 namespace ENEStock.Web.Controllers
 {
@@ -49,11 +50,39 @@ namespace ENEStock.Web.Controllers
             return ENEStock.Common.JsonHelper.SerializeObject(stockpriceList);
         }
 
-        public ActionResult GetEntity()
+        public JsonResult GetTradeDate(string interval)
         {
-            var rny =  service.GetEntiy();
+            var datelist = service.GetTLTradeDateList();
+            DateTime current = DateTime.Now;
+            var date = datelist.Where(m => m.CalendarDate.Date == current.Date).FirstOrDefault();
+            AjaxMsg msg = new AjaxMsg();
+            List<string> dateStr = new List<string>();
+            if (date != null && date.isOpen == true)
+            {
+                var lastDate = date;
+                var pre1 = datelist.FirstOrDefault(m => m.CalendarDate.Date == lastDate.PrevTradeDate.Date);
+                var pre2 = datelist.FirstOrDefault(m => m.CalendarDate.Date == pre1.PrevTradeDate.Date);
+                var pre3 = datelist.FirstOrDefault(m => m.CalendarDate.Date == pre2.PrevTradeDate.Date);
+                var pre4 = datelist.FirstOrDefault(m => m.CalendarDate.Date == pre3.PrevTradeDate.Date);
+                dateStr.Add(pre4.CalendarDate.ToString("yyyy-MM-dd"));
+                dateStr.Add(pre1.CalendarDate.ToString("yyyy-MM-dd"));
+            }
+            else if (date != null && date.isOpen == false)
+            {
+                var lastDate = datelist.FirstOrDefault(m => m.CalendarDate.Date == date.PrevTradeDate.Date);
+                var pre1 = datelist.FirstOrDefault(m => m.CalendarDate.Date == lastDate.PrevTradeDate.Date);
+                var pre2 = datelist.FirstOrDefault(m => m.CalendarDate.Date == pre1.PrevTradeDate.Date);
+                var pre3 = datelist.FirstOrDefault(m => m.CalendarDate.Date == pre2.PrevTradeDate.Date);
+                var pre4 = datelist.FirstOrDefault(m => m.CalendarDate.Date == pre3.PrevTradeDate.Date);
+                dateStr.Add(pre4.CalendarDate.ToString("yyyy-MM-dd"));
+                dateStr.Add(pre1.CalendarDate.ToString("yyyy-MM-dd"));
+            }
 
-            return Content("5");
+            return new JsonResult() 
+            { 
+                Data = dateStr,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+            };
         }
 
         public string TreeMenu()
