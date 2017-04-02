@@ -41,7 +41,14 @@ namespace ENEStock.Common
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             string encoding = response.ContentEncoding;
             string responseBody = string.Empty;
-            decoderesult(ref responseBody, response);
+            //decoderesult(ref responseBody, response);
+
+            Stream stream = response.GetResponseStream();
+            using (StreamReader ms = new StreamReader(stream))
+            {
+                responseBody = ms.ReadToEnd();
+            }
+
             response.Close();
             return responseBody;
         }

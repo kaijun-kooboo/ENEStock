@@ -98,7 +98,7 @@ namespace ENEStock.Service
                 stockpriceList.Add(model);
             });
 
-            Init(new DateTime(2016, 5, 31), new DateTime(2016, 6, 3), stockpriceList);
+            Init(new DateTime(2017, 3, 25), new DateTime(2017, 3, 30), stockpriceList);
 
             //init ENE
             stockpriceList.ForEach(m =>
